@@ -1,0 +1,23 @@
+﻿@model MVCStudenti.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<ul>
+    <li>Student id: @Model.StudentId </li>
+    <li>Ime: @Model.StudentName </li>
+    <li>Ime: @Model.Age </li>
+</ul>
+
+@Html.ActionLink("Create new", "Create")
+
+<br />
+
+@Html.DisplayNameFor(modelItem => Model.StudentName)
+
+@Html.TextBox(Html.DisplayFor(modelItem => Model.StudentName).ToString(), Model.StudentName, new { @class = "form-control" })
+
+@Html.TextBoxFor(x => x.StudentName, new { @class = "form-control" })
