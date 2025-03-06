@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApiVaja.Models.Mentor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MenIme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenPriimek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenSlika)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenVloga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenNaziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenUstanova)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenIme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenPriimek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenSlika)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenVloga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenNaziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenUstanova)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MenId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MenId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MenId })
+        </td>
+    </tr>
+}
+
+</table>

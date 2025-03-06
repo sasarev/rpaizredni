@@ -1,0 +1,74 @@
+﻿@model WebApiVaja.Models.Mentor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mentor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MenIme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenIme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenPriimek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenPriimek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenSlika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenSlika)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenVloga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenVloga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenNaziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenNaziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenUstanova)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenUstanova)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MenId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

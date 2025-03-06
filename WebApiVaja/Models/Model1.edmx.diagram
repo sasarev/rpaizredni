@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="201b0d81b89b4ee9a9c8bb30ee65f46a" Name="Diagram1">
+        <EntityTypeShape EntityType="EvidencaModel.Applications" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Dijak" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.DijakPodročje" Width="1.5" PointX="12" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Izvedba" Width="1.5" PointX="12" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.IzvedbaDijak" Width="1.5" PointX="14.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.IzvedbaMentor" Width="1.5" PointX="15.875" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Memberships" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Mentor" Width="1.5" PointX="12" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.PlanDejavnosti" Width="1.5" PointX="12" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.PlanDijak" Width="1.5" PointX="17.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.PlanSodelavci" Width="1.5" PointX="17.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Področja" Width="1.5" PointX="9.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Profiles" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Razredniki" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Roles" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Slike" Width="1.5" PointX="14.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvidencaModel.Users" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="EvidencaModel.MembershipApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.RoleApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.UserApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_Dijak_Razrednik" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_DijakPodročje_Dijak" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_IzvedbaDijak_Dijak" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_PlanDijak_Dijak" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_DijakPodročje_Področja" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_Izvedba_Področja" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_IzvedbaDijak_Izvedba" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_IzvedbaMentor_Izvedba" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_Slika_Izvedba" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_IzvedbaMentor_Mentor" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.MembershipUser" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_PlanSodelavci_Mentor" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_PlanDejavnosti_Področja" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_PlanDijak_PlanDejavnosti" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.FK_PlanSodelavci_PlanDejavnosti" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="EvidencaModel.UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
