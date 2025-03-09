@@ -20,7 +20,7 @@ namespace ShopSimple.Models
 
         [Required]
         [Column(TypeName = "decimal(10,2)")]
-        public decimal TotalAmount { get; set; } = 0;
+        public decimal TotalAmount => OrderItems.Sum(item => item.Price * item.Quantity);
 
         [Required]
         public OrderStatus Status { get; set; } = OrderStatus.Pending;

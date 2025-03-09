@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace ShopSimple.Models
 {
@@ -12,7 +13,7 @@ namespace ShopSimple.Models
         public int OrderId { get; set; }
 
         [ForeignKey("OrderId")]
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
 
         [Required, MaxLength(255)]
         public string ProductName { get; set; }
@@ -29,6 +30,7 @@ namespace ShopSimple.Models
         [NotMapped]
         public decimal Subtotal => Quantity * Price;
 
+        [JsonIgnore]
         public byte[]? ImageData { get; set; }
     }
 

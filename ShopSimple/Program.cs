@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using ShopSimple.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,17 @@ builder.Services.AddDbContext<ShopSimpleDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
+    });
+
+builder.Services.AddControllers(options =>
+{
+    options.RespectBrowserAcceptHeader = true;
+    options.OutputFormatters.RemoveType<Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerOutputFormatter>();
+});
 
 var app = builder.Build();
 

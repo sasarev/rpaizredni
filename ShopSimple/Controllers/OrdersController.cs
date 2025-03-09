@@ -21,7 +21,9 @@ namespace ShopSimple.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var shopSimpleDbContext = _context.Orders.Include(o => o.Customer);
+            var shopSimpleDbContext = _context.Orders
+                .Include(x => x.OrderItems)
+                .Include(o => o.Customer);
             return View(await shopSimpleDbContext.ToListAsync());
         }
 

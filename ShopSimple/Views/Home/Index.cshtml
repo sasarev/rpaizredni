@@ -2,7 +2,49 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@model List<OrderItem>
+
+@if (Model.Any())
+{
+    <div class="owl-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <img src="data:image/png;base64,@Convert.ToBase64String(item.ImageData)" alt="@item.ProductName" class="img-fluid" />
+                <div class="text-center mt-2">
+                    <h5>@item.ProductName</h5>
+                    <p>Price: $@item.Price | Quantity: @item.Quantity</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No images available for Order Items.</p>
+}
+
+<script>
+    $(document).ready(function () {
+        console.log("jQuery and Owl Carousel loaded successfully.");
+
+        if ($.fn.owlCarousel) {
+            $(".owl-carousel").owlCarousel({
+                loop: true,           // Infinite looping
+                margin: 10,           // Space between items
+                nav: true,            // Show navigation arrows
+                autoplay: true,       // Enable automatic movement
+                autoplayTimeout: 3000, // Delay between slides (in milliseconds)
+                autoplayHoverPause: true, // Pause when hovering
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        } else {
+            console.error("⚠ Owl Carousel is not available. Check if the script is loaded correctly.");
+        }
+    });
+</script>
+

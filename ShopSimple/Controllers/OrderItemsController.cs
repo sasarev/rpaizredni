@@ -56,8 +56,15 @@ namespace ShopSimple.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemId,OrderId,ProductName,Quantity,Price,ImageData")] OrderItem orderItem)
+        public async Task<IActionResult> Create([Bind("ItemId,OrderId,ProductName,Quantity,Price")] OrderItem orderItem, IFormFile? ImageFile)
         {
+            if (ImageFile is { Length: > 0 })
+            {
+                using var memoryStream = new MemoryStream();
+                await ImageFile.CopyToAsync(memoryStream);
+                orderItem.ImageData = memoryStream.ToArray(); // Convert file to byte[]
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(orderItem);
