@@ -34,3 +34,7 @@ body {
     margin: 20px 0 20px 0;
 }
 
+.owl-carousel .item img {
+    mix-blend-mode: multiply; /* Blends white background with transparency */
+}
+
