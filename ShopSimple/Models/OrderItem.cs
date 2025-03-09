@@ -28,6 +28,8 @@ namespace ShopSimple.Models
 
         [NotMapped]
         public decimal Subtotal => Quantity * Price;
+
+        public byte[]? ImageData { get; set; }
     }
 
 }

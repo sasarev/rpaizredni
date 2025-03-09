@@ -9,11 +9,11 @@ namespace ShopSimple.Models
         [Key]
         public int OrderId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please select a customer.")]
         public int CustomerId { get; set; }
 
         [ForeignKey("CustomerId")]
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
 
         [Required]
         public DateTime OrderDate { get; set; } = DateTime.UtcNow;
