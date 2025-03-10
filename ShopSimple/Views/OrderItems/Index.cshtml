@@ -1,38 +1,38 @@
 ﻿@model IEnumerable<ShopSimple.Models.OrderItem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Current products";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.Order)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.ProductName)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.ImageData)
             </th>
-            <th></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="table-primary">
             <td>
                 @Html.DisplayFor(modelItem => item.Order.OrderId)
             </td>
